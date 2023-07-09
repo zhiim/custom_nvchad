@@ -36,9 +36,6 @@ M.mason = {
     "isort",  -- formatter
     "pylint",  -- linter
 
-    -- java stuff
-    "jdtls",
-
     -- rust stuff
     "rust-analyzer",
     "rustfmt",
