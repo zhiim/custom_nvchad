@@ -11,7 +11,8 @@ Launch lazy.nvim panel with command `:Lazy`.
 Built with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).  
 There are two methods to add a parser for specific language:
 1. using built-in command `:TSInstall <language_to_install>`  
-2. modify `M.treesitter` in `configs/overrides.lua`  
+2. modify `M.treesitter` in `configs/overrides.lua`
+
 Treesitter usage:   
 * `:TSUpdate {language}/all` to update Parsers  
 *  `:TSInstallInfo` to check installation information for different languages  
@@ -29,3 +30,5 @@ Check [BUILTINS](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/do
 ## Key Mapping
 Set custom key mapping by editing `mapping.lua`.  
 Check [Mappings](https://nvchad.com/docs/config/mappings) for details.  
+# Tips
+* For sharing clipboard with system, install `xclip` on Linux with X11.
