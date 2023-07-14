@@ -30,5 +30,5 @@ Check [BUILTINS](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/do
 ## Key Mapping
 Set custom key mapping by editing `mapping.lua`.  
 Check [Mappings](https://nvchad.com/docs/config/mappings) for details.  
-# Tips
+## Tips
 * For sharing clipboard with system, install `xclip` on Linux with X11.
