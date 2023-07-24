@@ -11,14 +11,14 @@ Launch lazy.nvim panel with command `:Lazy`.
 Built with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).  
 There are two methods to add a parser for specific language:
 1. using built-in command `:TSInstall <language_to_install>`  
-2. modify `M.treesitter` in `configs/overrides.lua`, and run `:TSInstall`
+2. modify `M.treesitter` in `configs/overrides.lua`, and run `TSInstall`
 
 Treesitter usage:   
 * `:TSUpdate {language}/all` to update Parsers  
 *  `:TSInstallInfo` to check installation information for different languages  
 ### LSP, Linter and Formatter Management
 [Mason](https://github.com/williamboman/mason.nvim) is used to management language support packages.  
-Add new packages by modifying `M.Mason` in `configs/overrides.lua`, then install with `:MasonInstallAll` command.  
+Add new packages by modifying `M.Mason` in `configs/overrides.lua`, then install with `:MasonInstallAll` `:MasonInstall <packages>` command.  
 Launch Mason panel by `:Mason` command.  
 ### LSP Configuration
 LSP configuration support is built with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).  

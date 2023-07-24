@@ -39,6 +39,9 @@ M.mason = {
     -- rust stuff
     "rust-analyzer",
     "rustfmt",
+
+    -- java stuff
+    "jdtls",
   },
 }
 
