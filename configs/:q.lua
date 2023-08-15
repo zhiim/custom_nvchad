@@ -17,8 +17,6 @@ local sources = {
   b.formatting.isort,
   b.diagnostics.pylint,
 
-  -- rust
-  b.formatting.rustfmt,
 }
 
 null_ls.setup {

@@ -4,14 +4,11 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "tsx",
     "c",
     "markdown",
     "markdown_inline",
     "cpp",
-    "java",
     "python",
-    "rust",
   },
   indent = {
     enable = true,
@@ -36,12 +33,6 @@ M.mason = {
     "isort",  -- formatter
     "pylint",  -- linter
 
-    -- rust stuff
-    "rust-analyzer",
-    "rustfmt",
-
-    -- java stuff
-    "jdtls",
   },
 }
 
