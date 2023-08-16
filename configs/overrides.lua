@@ -29,10 +29,11 @@ M.mason = {
     "clang-format",
 
     -- python stuff
-    "python-lsp-server",
+    "pyright",  -- lsp
+    "ruff", -- linter with lots of syntex check
+    "mypy",  -- static type checker
     "isort",  -- formatter
-    "pylint",  -- linter
-
+    "debugpy", -- used with dap-python
   },
 }
 

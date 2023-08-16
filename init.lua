@@ -7,7 +7,7 @@
 -- })
 
 -- set a column line to indicate line changing of code
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "88"
 
 -- set tab = 4 spaces
 -- show existing tab with 4 spaces width

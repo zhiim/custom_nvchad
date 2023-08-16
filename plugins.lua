@@ -47,6 +47,66 @@ local plugins = {
     end,
   },
 
+  -- DAP plugin
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      -- load key mappings manually
+      require("core.utils").load_mappings("dap")
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      -- loading nvim-dap when loaded
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      local dap, dapui = require("dap"), require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap-python",
+    -- load this plugin by key mappings
+    keys = {"<leader>dpt", "<leader>dp", "<leader>dc", "<leader>dso", "<leader>dsi"},
+    dependencies = {
+      -- loading nvim-dap and nvim-dap-ui when loaded
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function()
+      -- path of debugpy
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      require("core.utils").load_mappings('dap_python')
+    end,
+  },
+
+  {
+  	"linux-cultist/venv-selector.nvim",
+    ft = "python",
+  	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+  	config = function()
+      local env_path = {
+        anaconda_path = "/home/xu/Others/condaEnvs"
+      }
+      local vs = require("venv-selector")
+      vs.setup(env_path)
+  	end,
+    require("core.utils").load_mappings("venv"),
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

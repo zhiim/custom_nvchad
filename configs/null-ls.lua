@@ -15,7 +15,8 @@ local sources = {
 
   -- python
   b.formatting.isort,
-  b.diagnostics.pylint,
+  b.diagnostics.ruff,
+  b.diagnostics.mypy,
 
 }
 

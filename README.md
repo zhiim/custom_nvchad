@@ -42,6 +42,9 @@ Format and lint system is built with [null-ls.nvim](https://github.com/jose-elia
 Trun on a formatter or linter by adding `b.formatting` for formatter and `b.diagnostics` for linter in `local sources` located in `configs/null-ls.lua`.  
 Check [BUILTINS](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md) for built-in formatter & linter name in null-ls.nvim, which may differ from package name.  
 
+### Debugging Support
+`nvim-dap`, `nvim-dap-ui` plugin have been added for debugging. Plugins for specific language debugging can be found in [Debug Adapter installation](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation).
+
 ## Key Mapping
 Set custom key mapping by editing `mapping.lua`.  
 Check [Mappings](https://nvchad.com/docs/config/mappings) for details.  

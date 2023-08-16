@@ -2,6 +2,7 @@
 local M = {}
 
 M.general = {
+  -- mappings in normal mode
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
@@ -9,8 +10,6 @@ M.general = {
 
 -- custom gitsigns mappings
 M.gitsigns = {
-  plugin = true,
-
   n = {
     ["<leader>tb"] = {
       function()
@@ -20,6 +19,76 @@ M.gitsigns = {
     },
   }
 }
--- more keybinds!
+-- mappings for nvim-dap
+M.dap = {
+    -- this mapping only takes place after being manually loaded in
+    -- plugin config
+    plugin = true,
+
+    -- key mappings work in normal mode
+    n = {
+      -- set breakpoints
+      ["<leader>dp"] = {
+          function()
+            require('dap').toggle_breakpoint()
+          end,
+          "Setting breakpoints"
+      },
+      -- continue
+      ["<leader>dc"] = {
+          function()
+            require('dap').continue()
+          end,
+          "Launching debug sessions/ resuming execution"
+      },
+      -- setp over
+      ["<leader>dso"] = {
+          function()
+            require('dap').step_over()
+          end,
+          "Step over"
+      },
+      -- setp into
+      ["<leader>dsi"] = {
+          function()
+            require('dap').step_into()
+          end,
+          "Step into"
+      },
+    },
+}
+
+-- mappings for nvim-dap-python
+M.dap_python = {
+    -- this mapping only takes place after being manually loaded in
+    -- plugin config
+    plugin = true,
+
+    -- key mappings work in normal mode
+    n = {
+      -- running python test method debugging
+      ["<leader>dpt"] = {
+          function()
+            require('dap-python').test_method()
+          end,
+          "Debugging in Python testing method"
+        }
+    },
+}
+
+-- key mappings for venv-selector
+M.venv = {
+    plugin = true,
+    n = {
+        -- select python venv
+        ["<leader>pvs"] = {
+            "<cmd>:VenvSelect<cr>"
+        },
+        -- select cached python venv
+        ["<leader>pvc"] = {
+            "<cmd>:VenvSelectCached<cr>"
+        },
+    }
+}
 
 return M
