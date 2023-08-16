@@ -32,14 +32,14 @@ M.dap = {
           function()
             require('dap').toggle_breakpoint()
           end,
-          "Setting breakpoints"
+          "Set breakpoints"
       },
       -- continue
       ["<leader>dc"] = {
           function()
             require('dap').continue()
           end,
-          "Launching debug sessions/ resuming execution"
+          "Launch debug sessions/ resuming execution"
       },
       -- setp over
       ["<leader>dso"] = {
@@ -71,7 +71,7 @@ M.dap_python = {
           function()
             require('dap-python').test_method()
           end,
-          "Debugging in Python testing method"
+          "Debug in Python testing method"
         }
     },
 }
@@ -82,12 +82,28 @@ M.venv = {
     n = {
         -- select python venv
         ["<leader>pvs"] = {
-            "<cmd>:VenvSelect<cr>"
+            "<cmd>:VenvSelect<cr>",
+            "Select a venv for python"
         },
         -- select cached python venv
         ["<leader>pvc"] = {
-            "<cmd>:VenvSelectCached<cr>"
+            "<cmd>:VenvSelectCached<cr>",
+            "Select last used venv"
         },
+        -- deactivate current venv
+        ["<leader>pvd"] = {
+            function ()
+                require("venv-selector").deactivate_venv()
+            end,
+            "Decativate current venv"
+        },
+        -- get path of current venv
+        ["<leader>pvp"] = {
+            function ()
+                require("venv-selector").get_active_venv()
+            end,
+            "Get path of current venv"
+        }
     }
 }
 
