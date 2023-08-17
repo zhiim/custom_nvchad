@@ -99,7 +99,7 @@ local plugins = {
   	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
   	config = function()
       local env_path = {
-        anaconda_path = "/home/xu/Others/condaEnvs"
+        anaconda_path = "/home/xu/Applications/condaEnvs"
       }
       local vs = require("venv-selector")
       vs.setup(env_path)
