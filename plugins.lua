@@ -94,18 +94,28 @@ local plugins = {
   },
 
   {
-  	"linux-cultist/venv-selector.nvim",
-    ft = "python",
-  	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
-  	config = function()
-      local env_path = {
-        anaconda_path = "/home/xu/Applications/condaEnvs"
-      }
-      local vs = require("venv-selector")
-      vs.setup(env_path)
-  	end,
-    require("core.utils").load_mappings("venv"),
+      "danymat/neogen",
+      dependencies = "nvim-treesitter/nvim-treesitter",
+      config = true,
+      -- Uncomment next line if you want to follow only stable versions
+      -- version = "*" 
+      require("core.utils").load_mappings("neogen")
   },
+
+  -- {
+  -- 	"linux-cultist/venv-selector.nvim",
+  --   ft = "python",
+  -- 	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+  -- 	config = function()
+  --     local env_path = {
+  --       anaconda_path = "/home/xu/Applications/condaEnvs"
+  --     }
+  --     local vs = require("venv-selector")
+  --     vs.setup(env_path)
+  -- 	end,
+  --   require("core.utils").load_mappings("venv"),
+  -- },
+
 
   -- To make a plugin not be loaded
   -- {

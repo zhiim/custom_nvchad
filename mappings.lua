@@ -76,35 +76,47 @@ M.dap_python = {
     },
 }
 
--- key mappings for venv-selector
-M.venv = {
+M.neogen = {
     plugin = true,
     n = {
-        -- select python venv
-        ["<leader>pvs"] = {
-            "<cmd>:VenvSelect<cr>",
-            "Select a venv for python"
-        },
-        -- select cached python venv
-        ["<leader>pvc"] = {
-            "<cmd>:VenvSelectCached<cr>",
-            "Select last used venv"
-        },
-        -- deactivate current venv
-        ["<leader>pvd"] = {
+        ["<leader>ag"] = {
             function ()
-                require("venv-selector").deactivate_venv()
+                require("neogen").generate()
             end,
-            "Decativate current venv"
-        },
-        -- get path of current venv
-        ["<leader>pvp"] = {
-            function ()
-                require("venv-selector").get_active_venv()
-            end,
-            "Get path of current venv"
+            "Genearte annotation templates"
         }
     }
 }
+
+-- -- key mappings for venv-selector
+-- M.venv = {
+--     plugin = true,
+--     n = {
+--         -- select python venv
+--         ["<leader>pvs"] = {
+--             "<cmd>:VenvSelect<cr>",
+--             "Select a venv for python"
+--         },
+--         -- select cached python venv
+--         ["<leader>pvc"] = {
+--             "<cmd>:VenvSelectCached<cr>",
+--             "Select last used venv"
+--         },
+--         -- deactivate current venv
+--         ["<leader>pvd"] = {
+--             function ()
+--                 require("venv-selector").deactivate_venv()
+--             end,
+--             "Decativate current venv"
+--         },
+--         -- get path of current venv
+--         ["<leader>pvp"] = {
+--             function ()
+--                 require("venv-selector").get_active_venv()
+--             end,
+--             "Decativate current venv"
+--         }
+--     }
+-- }
 
 return M
