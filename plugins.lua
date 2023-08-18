@@ -89,28 +89,19 @@ local plugins = {
   },
 
   {
-      "danymat/neogen",
-      dependencies = "nvim-treesitter/nvim-treesitter",
-      config = true,
-      keys = {"<leader>ga"},
-      -- Uncomment next line if you want to follow only stable versions
-      -- version = "*" 
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+    keys = {"<leader>ga"},
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*" 
   },
 
-  -- {
-  -- 	"linux-cultist/venv-selector.nvim",
-  --   ft = "python",
-  -- 	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
-  -- 	config = function()
-  --     local env_path = {
-  --       anaconda_path = "/home/xu/Applications/condaEnvs"
-  --     }
-  --     local vs = require("venv-selector")
-  --     vs.setup(env_path)
-  -- 	end,
-  --   require("core.utils").load_mappings("venv"),
-  -- },
-
+  {
+    -- add an vim plugin
+    "rhysd/vim-grammarous",
+    lazy = false,
+  },
 
   -- To make a plugin not be loaded
   -- {

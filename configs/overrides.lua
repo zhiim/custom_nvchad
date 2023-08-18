@@ -31,7 +31,6 @@ M.mason = {
     -- python stuff
     "pyright",  -- lsp
     "ruff", -- linter with lots of syntex check
-    "mypy",  -- static type checker
     "isort",  -- formatter
     "debugpy", -- used with dap-python
   },

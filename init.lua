@@ -16,3 +16,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 -- On pressing tab, insert 4 spaces
 vim.opt.expandtab = true
+
+-- let grammarous plugin download the correct package 
+vim.g.grammarous_jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'

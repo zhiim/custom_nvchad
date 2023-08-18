@@ -68,6 +68,7 @@ M.dap_python = {
     },
 }
 
+-- key mappings for neogen plugin
 M.neogen = {
     n = {
         ["<leader>ga"] = {
@@ -79,35 +80,18 @@ M.neogen = {
     }
 }
 
--- -- key mappings for venv-selector
--- M.venv = {
---     plugin = true,
---     n = {
---         -- select python venv
---         ["<leader>pvs"] = {
---             "<cmd>:VenvSelect<cr>",
---             "Select a venv for python"
---         },
---         -- select cached python venv
---         ["<leader>pvc"] = {
---             "<cmd>:VenvSelectCached<cr>",
---             "Select last used venv"
---         },
---         -- deactivate current venv
---         ["<leader>pvd"] = {
---             function ()
---                 require("venv-selector").deactivate_venv()
---             end,
---             "Decativate current venv"
---         },
---         -- get path of current venv
---         ["<leader>pvp"] = {
---             function ()
---                 require("venv-selector").get_active_venv()
---             end,
---             "Decativate current venv"
---         }
---     }
--- }
+-- key mappings for grammarous plugin
+M.grammarous = {
+    n = {
+        ["<leader>gch"] = {
+            "<cmd>:GrammarousCheck<cr>",
+            "Chech Grammar",
+        },
+        ["<leader>gcr"] = {
+            "<cmd>:GrammarousReset<cr>",
+            "Rest grammar check",
+        }
+    }
+}
 
 return M
