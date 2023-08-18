@@ -50,10 +50,6 @@ local plugins = {
   -- DAP plugin
   {
     "mfussenegger/nvim-dap",
-    config = function()
-      -- load key mappings manually
-      require("core.utils").load_mappings("dap")
-    end,
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -89,7 +85,6 @@ local plugins = {
       -- path of debugpy
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
-      require("core.utils").load_mappings('dap_python')
     end,
   },
 
@@ -97,9 +92,9 @@ local plugins = {
       "danymat/neogen",
       dependencies = "nvim-treesitter/nvim-treesitter",
       config = true,
+      keys = {"<leader>ga"},
       -- Uncomment next line if you want to follow only stable versions
       -- version = "*" 
-      require("core.utils").load_mappings("neogen")
   },
 
   -- {

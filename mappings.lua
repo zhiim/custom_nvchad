@@ -21,10 +21,6 @@ M.gitsigns = {
 }
 -- mappings for nvim-dap
 M.dap = {
-    -- this mapping only takes place after being manually loaded in
-    -- plugin config
-    plugin = true,
-
     -- key mappings work in normal mode
     n = {
       -- set breakpoints
@@ -60,10 +56,6 @@ M.dap = {
 
 -- mappings for nvim-dap-python
 M.dap_python = {
-    -- this mapping only takes place after being manually loaded in
-    -- plugin config
-    plugin = true,
-
     -- key mappings work in normal mode
     n = {
       -- running python test method debugging
@@ -77,13 +69,12 @@ M.dap_python = {
 }
 
 M.neogen = {
-    plugin = true,
     n = {
-        ["<leader>ag"] = {
+        ["<leader>ga"] = {
             function ()
                 require("neogen").generate()
             end,
-            "Genearte annotation templates"
+            "Genearte annotation template"
         }
     }
 }
