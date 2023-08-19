@@ -24,14 +24,14 @@ M.dap = {
     -- key mappings work in normal mode
     n = {
       -- set breakpoints
-      ["<leader>dp"] = {
+      ["<leader>dps"] = {
           function()
             require('dap').toggle_breakpoint()
           end,
           "Set breakpoints"
       },
       -- continue
-      ["<leader>dc"] = {
+      ["<leader>dpc"] = {
           function()
             require('dap').continue()
           end,
