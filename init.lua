@@ -17,5 +17,14 @@ vim.opt.shiftwidth = 4
 -- On pressing tab, insert 4 spaces
 vim.opt.expandtab = true
 
--- let grammarous plugin download the correct package 
-vim.g.grammarous_jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+-- use powershell in windows
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    vim.o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
+    vim.o.shellcmdflag =
+      "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    vim.o.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+    vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+    vim.o.shellquote = ""
+    vim.o.shellxquote = ""
+end
+
