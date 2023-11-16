@@ -13,7 +13,7 @@ Launch lazy.nvim panel with command `:Lazy`.
 ### Language Parsers
 Built with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).  
 There are two methods to add a parser for specific language:
-1. using built-in command `:TSInstall <language_to_install>`  
+1. use built-in command `:TSInstall <language_to_install>`  
 2. modify `M.treesitter` in `configs/overrides.lua`, and run `TSInstall <package_to_install>`  
 
 Treesitter usage:   
