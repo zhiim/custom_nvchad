@@ -6,6 +6,14 @@ end
 
 local b = null_ls.builtins
 
+-- set config file for ruff
+local ruff_config
+if vim.loop.os_uname().sysname == "Linux" then
+    ruff_config = {"--config=/home/xu/.config/nvim/lua/custom/ruff/pyproject.toml"}
+else
+    ruff_config = {"--config=$HOME\\AppData\\Local\\nvim\\lua\\custom\\ruff\\pyproject.toml"}
+end
+
 local sources = {
   -- Lua
   b.formatting.stylua,
@@ -17,7 +25,7 @@ local sources = {
   b.formatting.isort,
   -- setup ruff work with a configuration file
   b.diagnostics.ruff.with({
-        extra_args = {"--config=/home/xu/.config/nvim/lua/custom/ruff/pyproject.toml"}
+        extra_args = ruff_config
     }),
 
 }
