@@ -11,7 +11,7 @@ M.general = {
 -- custom gitsigns mappings
 M.gitsigns = {
   n = {
-    ["<leader>tb"] = {
+    ["<leader>gtb"] = {
       function()
         require("gitsigns").toggle_current_line_blame()
       end,
@@ -24,14 +24,14 @@ M.dap = {
     -- key mappings work in normal mode
     n = {
       -- set breakpoints
-      ["<leader>dsb"] = {
+      ["<leader>dbp"] = {
           function()
             require('dap').toggle_breakpoint()
           end,
           "Set breakpoints"
       },
       -- continue
-      ["<leader>dco"] = {
+      ["<leader>dct"] = {
           function()
             require('dap').continue()
           end,
@@ -51,19 +51,17 @@ M.dap = {
           end,
           "Step into"
       },
-    },
-}
-
--- mappings for nvim-dap-python
-M.dap_python = {
-    -- key mappings work in normal mode
-    n = {
-      -- running python test method debugging
-      ["<leader>dpt"] = {
-          function()
-            require('dap-python').test_method()
-          end,
-          "Debug in Python testing method"
+        -- evaluate expression
+        ["<leader>dev"] = {
+            function()
+                require('dapui').eval()
+            end
+        },
+        -- end the debug
+        ["<leader>ded"] = {
+            function()
+                require('dap').terminate()
+            end
         }
     },
 }

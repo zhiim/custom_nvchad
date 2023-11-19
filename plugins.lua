@@ -56,6 +56,9 @@ local plugins = {
   },
   {
     "rcarriga/nvim-dap-ui",
+    -- load this plugin by key mappings
+    -- keys = {"<leader>dsb", "<leader>dco", "<leader>dc", "<leader>dso", "<leader>dsi"},
+    lazy = false,
     dependencies = {
       -- loading nvim-dap when loaded
       "mfussenegger/nvim-dap",
@@ -65,21 +68,19 @@ local plugins = {
     end,
   },
 
-  {
-    "mfussenegger/nvim-dap-python",
-    -- load this plugin by key mappings
-    keys = {"<leader>dpt", "<leader>dp", "<leader>dc", "<leader>dso", "<leader>dsi"},
-    dependencies = {
-      -- loading nvim-dap and nvim-dap-ui when loaded
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function()
-      -- path of debugpy
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-    end,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap-python",
+  --   dependencies = {
+  --     -- loading nvim-dap and nvim-dap-ui when loaded
+  --     "mfussenegger/nvim-dap",
+  --     "rcarriga/nvim-dap-ui",
+  --   },
+  --   config = function()
+  --     -- path of debugpy
+  --     local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+  --     require("dap-python").setup(path)
+  --   end,
+  -- },
 
   {
     "danymat/neogen",
