@@ -24,14 +24,14 @@ M.dap = {
     -- key mappings work in normal mode
     n = {
       -- set breakpoints
-      ["<leader>dps"] = {
+      ["<leader>dsb"] = {
           function()
             require('dap').toggle_breakpoint()
           end,
           "Set breakpoints"
       },
       -- continue
-      ["<leader>dpc"] = {
+      ["<leader>dco"] = {
           function()
             require('dap').continue()
           end,
@@ -71,25 +71,11 @@ M.dap_python = {
 -- key mappings for neogen plugin
 M.neogen = {
     n = {
-        ["<leader>ga"] = {
+        ["<leader>gen"] = {
             function ()
                 require("neogen").generate()
             end,
             "Genearte annotation template"
-        }
-    }
-}
-
--- key mappings for grammarous plugin
-M.grammarous = {
-    n = {
-        ["<leader>gch"] = {
-            "<cmd>:GrammarousCheck<cr>",
-            "Chech Grammar",
-        },
-        ["<leader>gcr"] = {
-            "<cmd>:GrammarousReset<cr>",
-            "Rest grammar check",
         }
     }
 }
