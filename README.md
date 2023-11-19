@@ -23,7 +23,7 @@ Built with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 There are two methods to add a parser for specific language:
 
 1. use built-in command `:TSInstall <language_to_install>`  
-2. modify `M.treesitter` in `configs/overrides.lua`, and run `TSInstall <package_to_install>`  
+2. modify `M.treesitter` in `configs/overrides.lua`, then it will be installed automatically. 
 
 Treesitter usage:   
 
@@ -35,7 +35,7 @@ Treesitter usage:
 
 [Mason](https://github.com/williamboman/mason.nvim) is used to management language support packages.  
 
-Add new packages by modifying `M.Mason` in `configs/overrides.lua`, then install with `:MasonInstallAll` `:MasonInstall <packages>` command.  
+Add new packages by modifying `M.Mason` in `configs/overrides.lua`, then install with `:MasonInstallAll` or `:MasonInstall <packages>` command.  
 
 Launch Mason panel by `:Mason` command.  
 
