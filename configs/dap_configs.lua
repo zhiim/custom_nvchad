@@ -18,7 +18,7 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
     lldb_path = os.getenv("UserProfile") .. "\\AppData\\Local\\nvim-data\\mason\\packages\\codelldb\\extension\\adapter\\codelldb.exe"
     detached_status = false
 else
-    lldb_path = os.getenv("HOME") .. ""
+    lldb_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb"
     detached_status = true
 end
 dap.adapters.codelldb = {

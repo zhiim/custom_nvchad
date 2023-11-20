@@ -28,6 +28,7 @@ M.mason = {
     "clangd",
     "clang-format",
     "codelldb",  -- c/c++ debugger
+    "cmake-language-server",
 
     -- python stuff
     "python-lsp-server",  -- lsp
