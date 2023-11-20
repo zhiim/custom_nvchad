@@ -4,13 +4,32 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "clangd" }
+-- local servers = { "clangd" }
+--
+-- for _, lsp in ipairs(servers) do
+--   lspconfig[lsp].setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--   }
+-- end
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+-- clangd setting, use mingw in windows
+local clangd_mingw
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    clangd_mingw = "--query-driver=" .. os.getenv("UserProfile") .. "\\scoop\\apps\\mingw\\current\\bin\\c++.exe"
+    lspconfig.clangd.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        cmd = {
+            "clangd",
+            clangd_mingw
+        }
+    }
+else
+    lspconfig.clangd.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
 end
 
 -- 
