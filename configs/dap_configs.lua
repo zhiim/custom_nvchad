@@ -13,18 +13,33 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 -- c/c++ debugger
-dap.adapters.lldb = {
-  type = 'executable',
-  command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
-  name = 'lldb'
+local lldb_path, detached_status
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    lldb_path = os.getenv("UserProfile") .. "\\AppData\\Local\\nvim-data\\mason\\packages\\codelldb\\extension\\adapter\\codelldb.exe"
+    detached_status = false
+else
+    lldb_path = os.getenv("HOME") .. ""
+    detached_status = true
+end
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command = lldb_path,
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    detached = detached_status,
+  }
 }
 
 -- c/c++ debugger configurations
 dap.configurations.cpp = {
   {
-    name = 'Launch',
-    type = 'lldb',
-    request = 'launch',
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
@@ -34,20 +49,9 @@ dap.configurations.cpp = {
         local argument_string = vim.fn.input("Program arguments: ")
         return vim.fn.split(argument_string, " ", true)
     end,
-    -- 💀
-    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-    --
-    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-    --
-    -- Otherwise you might get the following error:
-    --
-    --    Error on launch: Failed to attach to the target process
-    --
-    -- But you should be aware of the implications:
-    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-    -- runInTerminal = false,
   },
 }
+dap.configurations.c = dap.configurations.cpp
 
 -- python debugger
 local debugpy_path

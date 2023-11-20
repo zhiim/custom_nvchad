@@ -27,6 +27,8 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "codelldb",  -- c/c++ debugger
+    "cmake",
 
     -- python stuff
     "python-lsp-server",  -- lsp
