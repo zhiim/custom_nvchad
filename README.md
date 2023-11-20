@@ -66,8 +66,6 @@ Check [BUILTINS](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/do
 
 `nvim-dap`, `nvim-dap-ui` plugin have been added for debugging. Plugins for specific language debugging can be found in [Debug Adapter installation](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation).
 
-To use `lldb-vscode` bebug C/C++ codes, install `lldb` first. Set `CMAKE_BUILD_TYPE=DEBUG` to compile a file for debugging.
-
 ## Key Mapping
 
 Set custom key mapping by editing `mapping.lua`.  
@@ -77,4 +75,4 @@ Check [Mappings](https://nvchad.com/docs/config/mappings) for details.
 ## Tips
 
 * To share clipboard with system, install `xclip` on Linux with X11, install `win32yank` on Windows for WSL.
-* To use C++ linter with CMake, add `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` in CMakeList.txt.
+* To use C++ linter with CMake, add `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` in CMakeList.txt. Also in Windows, `mingw` should be installed and `cmake` should use `make` or `ninja` as build generator.
