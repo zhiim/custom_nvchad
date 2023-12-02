@@ -76,3 +76,4 @@ Check [Mappings](https://nvchad.com/docs/config/mappings) for details.
 
 * To share clipboard with system, install `xclip` on Linux with X11, install `win32yank` on Windows for WSL.
 * To use C++ linter with CMake, add `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` in CMakeList.txt. Also in Windows, `mingw` should be installed and `cmake` should use `make` or `ninja` as build generator.
+* In Windows, `pylsp` should be used with `venv`.

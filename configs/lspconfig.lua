@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "cmake", "pyright" }
+local servers = { "cmake" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -26,6 +26,7 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
         }
     }
 else
+    -- if in linux
     lspconfig.clangd.setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -36,16 +37,16 @@ end
 -- lspconfig.pyright.setup { blabla}
 
 -- pylsp settings
--- lspconfig.pylsp.setup {
---    on_attach = on_attach,
---    capabilities = capabilities,
---    settings = {
---         pylsp = {
---             plugins = {
---                 pycodestyle = {
---                     enabled = false
---                 }
---             }
---         }
---     }
---  }
+lspconfig.pylsp.setup {
+   on_attach = on_attach,
+   capabilities = capabilities,
+   settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    enabled = false
+                }
+            }
+        }
+    }
+ }
