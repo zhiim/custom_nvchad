@@ -31,8 +31,8 @@ M.mason = {
     "cmake-language-server",
 
     -- python stuff
-    -- "python-lsp-server",  -- lsp
-    "pyright",
+    "python-lsp-server",  -- lsp
+    -- "pyright",
     "ruff", -- linter with lots of syntex check
     "isort",  -- formatter
     "debugpy", -- used with dap-python
