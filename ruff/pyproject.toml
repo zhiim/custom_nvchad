@@ -7,6 +7,11 @@ select = [
     "E",  # pycodestyle Error
     "W",  # pycodestyle Warn
     "N",  # pep8-naming
+    "I",  # isort
+    "A",  # flak8-builtins
+    "PLC",  # Pylint
+    "PLE",
+    "PLW"
 ]
 ignore = [
     "N802",  # function name should be lowwercase (conflict with PyQt)
