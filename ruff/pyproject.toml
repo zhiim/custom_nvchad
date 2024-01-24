@@ -7,7 +7,6 @@ select = [
     "E",  # pycodestyle Error
     "W",  # pycodestyle Warn
     "N",  # pep8-naming
-    "I",  # isort
     "A",  # flak8-builtins
     "PLC",  # Pylint
     "PLE",
