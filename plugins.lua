@@ -48,42 +48,42 @@ local plugins = {
   },
 
   -- DAP plugin
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-        require("custom.configs.dap_configs")
-    end
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    -- load this plugin by key mappings
-    dependencies = {
-      -- loading nvim-dap when loaded
-      "mfussenegger/nvim-dap",
-    },
-    config = function()
-        require("dapui").setup()
-    end,
-  },
-
-  {
-    "mfussenegger/nvim-dap-python",
-    dependencies = {
-      -- loading nvim-dap and nvim-dap-ui when loaded
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    ft = "python",
-  },
-
-  {
-    "danymat/neogen",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = true,
-    keys = {"<leader>ga"},
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*" 
-  },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --       require("custom.configs.dap_configs")
+  --   end
+  -- },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   -- load this plugin by key mappings
+  --   dependencies = {
+  --     -- loading nvim-dap when loaded
+  --     "mfussenegger/nvim-dap",
+  --   },
+  --   config = function()
+  --       require("dapui").setup()
+  --   end,
+  -- },
+  --
+  -- {
+  --   "mfussenegger/nvim-dap-python",
+  --   dependencies = {
+  --     -- loading nvim-dap and nvim-dap-ui when loaded
+  --     "mfussenegger/nvim-dap",
+  --     "rcarriga/nvim-dap-ui",
+  --   },
+  --   ft = "python",
+  -- },
+  --
+  -- {
+  --   "danymat/neogen",
+  --   dependencies = "nvim-treesitter/nvim-treesitter",
+  --   config = true,
+  --   keys = {"<leader>ga"},
+  --   -- Uncomment next line if you want to follow only stable versions
+  --   -- version = "*" 
+  -- },
 
     {
         "christoomey/vim-tmux-navigator",

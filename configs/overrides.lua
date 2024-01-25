@@ -27,7 +27,7 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    "codelldb",  -- c/c++ debugger
+    -- "codelldb",  -- c/c++ debugger
     "cmake-language-server",
 
     -- python stuff
@@ -35,7 +35,7 @@ M.mason = {
     -- "pyright",
     "ruff", -- linter with lots of syntex check
     "isort",  -- formatter
-    "debugpy", -- used with dap-python
+    -- "debugpy", -- used with dap-python
   },
 }
 
